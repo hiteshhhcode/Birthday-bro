@@ -25,13 +25,25 @@
       width: 80%;
     }
 
+    .photo {
+      margin: 20px auto;
+    }
+
+    .photo img {
+      width: 250px;
+      height: auto;
+      border-radius: 20px;
+      border: 5px solid white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    }
+
     .balloon {
       position: absolute;
       bottom: -150px;
       width: 80px;
       height: 100px;
       background-color: red;
-      border-radius: 50% 50% 50% 50%;
+      border-radius: 50%;
       animation: float 6s infinite ease-in;
     }
 
@@ -63,24 +75,19 @@
       text-align: center;
     }
 
-    button {
-      padding: 10px 20px;
-      font-size: 1em;
-      border: none;
-      background: #fff;
-      color: #333;
+    audio {
       border-radius: 10px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #ffd700;
+      outline: none;
     }
   </style>
 </head>
 <body>
   <h1>🎉 Happy Birthday Brother! 🎂</h1>
-  <p>You're more than just a brother — you're my hero, my guide, and my forever friend. Wishing you a day filled with love, laughter, and unforgettable memories!</p>
+  <p>You're more than just a brother — you're my hero, my guide, and my forever friend. Wishing you a day full of love, laughter, and unforgettable memories!</p>
+
+  <div class="photo">
+    <img src="us.jpg" alt="Me and My Brother">
+  </div>
 
   <!-- Balloons -->
   <div class="balloon" style="left: 10%; background-color: #ff4e50;"></div>
@@ -98,7 +105,6 @@
   </div>
 
   <script>
-    // Balloons auto-respawn
     const balloons = document.querySelectorAll('.balloon');
     balloons.forEach(balloon => {
       balloon.addEventListener('animationiteration', () => {
