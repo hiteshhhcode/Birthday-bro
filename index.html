@@ -1,273 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Happy Birthday Brother!</title>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Bro!</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: linear-gradient(to top right, #4facfe, #00f2fe);
-      overflow: hidden;
-      font-family: 'Comic Sans MS', cursive;
+      font-family: 'Segoe UI', sans-serif;
+      background: radial-gradient(circle, #1e1e2f, #111);
       color: white;
       text-align: center;
-      position: relative;
-      height: 100vh;
+      overflow-x: hidden;
     }
 
     h1 {
+      margin-top: 60px;
       font-size: 3em;
-      margin-top: 50px;
-      text-shadow: 0 0 10px #fff;
-    }
-
-    p {
-      font-size: 1.7em;
-      margin: 20px auto 40px;
-      width: 85%;
-      text-shadow: 0 0 5px #0008;
+      color: #ffcc00;
+      text-shadow: 2px 2px 10px #000;
     }
 
     .photo {
-      margin: 0 auto 50px;
+      margin: 30px auto;
       width: 260px;
       border-radius: 20px;
       overflow: hidden;
-      border: 5px solid white;
-      box-shadow: 0 0 30px rgba(255 255 255 / 0.7);
+      border: 5px solid transparent;
+      padding: 5px;
+      background: linear-gradient(45deg, red, yellow, lime, aqua, blue, magenta, red);
+      background-size: 400% 400%;
+      animation: rainbowGlow 8s linear infinite;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.8);
       transition: transform 0.3s ease-in-out;
     }
 
     .photo img {
       width: 100%;
+      border-radius: 15px;
       display: block;
     }
 
-    .photo:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 50px rgba(255 255 255 / 1);
+    @keyframes rainbowGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    .balloon {
-      position: absolute;
-      bottom: -150px;
-      width: 80px;
-      height: 100px;
-      background-color: red;
-      border-radius: 50%;
-      animation: float 6s infinite ease-in;
-      opacity: 0.9;
+    p.message {
+      font-size: 1.3em;
+      margin: 20px;
+      line-height: 1.6;
+      color: #ddd;
     }
 
-    .balloon::after {
-      content: '';
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      width: 2px;
-      height: 30px;
-      background: white;
+    .ending-line {
+      margin-top: 60px;
+      padding: 20px;
+      color: #ffffff;
+      font-size: 1.6em;
+      font-weight: bold;
+      text-align: center;
+      text-shadow: 2px 2px 5px #000;
+      animation: fadeInUp 2s ease-in-out;
     }
 
-    @keyframes float {
-      0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translateY(-100vh) rotate(360deg);
+    @keyframes fadeInUp {
+      from {
         opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    /* Fireworks container */
-    #fireworks {
+    /* Fireworks */
+    .firework {
       position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 9999;
-    }
-
-    /* Confetti pieces */
-    .confetti {
-      position: fixed;
+      top: 50%;
+      left: 50%;
       width: 10px;
       height: 10px;
-      background-color: #fff;
-      opacity: 0.8;
+      border-radius: 50%;
+      background: white;
       pointer-events: none;
-      z-index: 10000;
-      will-change: transform;
-      border-radius: 2px;
-      animation-name: confetti-fall;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
+      animation: explode 1s ease-out forwards;
     }
 
-    @keyframes confetti-fall {
+    @keyframes explode {
       0% {
-        transform: translateY(-10vh) rotate(0deg);
+        transform: translate(-50%, -50%) scale(1);
         opacity: 1;
       }
       100% {
-        transform: translateY(110vh) rotate(360deg);
+        transform: translate(-50%, -50%) scale(5);
         opacity: 0;
       }
     }
   </style>
 </head>
 <body>
-  <h1>🎉 Happy Birthday Brother! 🎂</h1>
-  <p>You're my inspiration. May your day be full of joy, love, and surprises!</p>
+
+  <h1>Happy Birthday Bro! 🎉</h1>
 
   <div class="photo">
-    <img src="https://raw.githubusercontent.com/hiteshhhcode/Birthday-bro/main/us.jpg" alt="Me and My Brother" />
+    <img src="https://raw.githubusercontent.com/hiteshhhcode/Birthday-bro/main/us.jpg" alt="Me and My Brother">
   </div>
 
-  <!-- Balloons -->
-  <div class="balloon" style="left: 10%; background-color: #ff4e50;"></div>
-  <div class="balloon" style="left: 30%; background-color: #f9d423;"></div>
-  <div class="balloon" style="left: 50%; background-color: #1fab89;"></div>
-  <div class="balloon" style="left: 70%; background-color: #9d50bb;"></div>
-  <div class="balloon" style="left: 90%; background-color: #00c9ff;"></div>
+  <p class="message">
+    Wishing you a day filled with laughter, love, and all the happiness you bring into my life.<br>
+    You’re not just my brother — you’re my inspiration. ❤️
+  </p>
 
-  <!-- Fireworks container -->
-  <canvas id="fireworks"></canvas>
+  <div class="ending-line">
+    <p>You'll always be my strongest bond. 💙</p>
+  </div>
 
+  <!-- Firework Script -->
   <script>
-    // Balloon random float animation
-    const balloons = document.querySelectorAll('.balloon');
-    balloons.forEach(balloon => {
-      balloon.addEventListener('animationiteration', () => {
-        balloon.style.left = Math.random() * 100 + '%';
-        balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 70%, 60%)`;
-      });
-    });
-
-    // Fireworks effect - simple canvas fireworks by generating bursts at random positions
-    const canvas = document.getElementById('fireworks');
-    const ctx = canvas.getContext('2d');
-    let width, height;
-    let fireworks = [];
-
-    function random(min, max) {
-      return Math.random() * (max - min) + min;
+    function createFirework(x, y) {
+      const firework = document.createElement('div');
+      firework.className = 'firework';
+      firework.style.left = x + 'px';
+      firework.style.top = y + 'px';
+      firework.style.background = `hsl(${Math.random() * 360}, 100%, 60%)`;
+      document.body.appendChild(firework);
+      setTimeout(() => firework.remove(), 1000);
     }
 
-    function resize() {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
-    }
-
-    window.addEventListener('resize', resize);
-    resize();
-
-    class Particle {
-      constructor(x, y, color) {
-        this.x = x;
-        this.y = y;
-        this.color = color;
-        this.radius = random(2, 4);
-        this.speed = random(1, 5);
-        this.angle = random(0, Math.PI * 2);
-        this.alpha = 1;
-        this.decay = random(0.015, 0.03);
-      }
-
-      update() {
-        this.x += Math.cos(this.angle) * this.speed;
-        this.y += Math.sin(this.angle) * this.speed;
-        this.alpha -= this.decay;
-        this.radius *= 0.96;
-      }
-
-      draw(ctx) {
-        if(this.alpha <= 0) return;
-        ctx.save();
-        ctx.globalAlpha = this.alpha;
-        ctx.beginPath();
-        ctx.fillStyle = this.color;
-        ctx.shadowColor = this.color;
-        ctx.shadowBlur = 10;
-        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.closePath();
-        ctx.restore();
-      }
-    }
-
-    class Firework {
-      constructor() {
-        this.x = random(100, width - 100);
-        this.y = random(100, height - 200);
-        this.particles = [];
-        this.createParticles();
-      }
-
-      createParticles() {
-        const colors = ['#ff4e50', '#f9d423', '#1fab89', '#9d50bb', '#00c9ff', '#ffd700', '#ff69b4'];
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        for(let i = 0; i < 40; i++) {
-          this.particles.push(new Particle(this.x, this.y, color));
-        }
-      }
-
-      update() {
-        this.particles.forEach(p => p.update());
-        this.particles = this.particles.filter(p => p.alpha > 0.01);
-      }
-
-      draw(ctx) {
-        this.particles.forEach(p => p.draw(ctx));
-      }
-
-      isDone() {
-        return this.particles.length === 0;
-      }
-    }
-
-    function createFirework() {
-      fireworks.push(new Firework());
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, width, height);
-
-      if(Math.random() < 0.05) {
-        createFirework();
-      }
-
-      fireworks.forEach(firework => {
-        firework.update();
-        firework.draw(ctx);
-      });
-
-      fireworks = fireworks.filter(f => !f.isDone());
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    // Confetti effect
-    const confettiColors = ['#ff4e50', '#f9d423', '#1fab89', '#9d50bb', '#00c9ff', '#ffd700', '#ff69b4'];
-    function createConfetti() {
-      const confetti = document.createElement('div');
-      confetti.classList.add('confetti');
-      confetti.style.backgroundColor = confettiColors[Math.floor(Math.random() * confettiColors.length)];
-      confetti.style.left = Math.random() * window.innerWidth + 'px';
-      confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
-      confetti.style.width = confetti.style.height = (Math.random() * 8 + 5) + 'px';
-      document.body.appendChild(confetti);
-      setTimeout(() => confetti.remove(), 5000);
-    }
-
-    setInterval(createConfetti, 200);
+    setInterval(() => {
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight / 2;
+      createFirework(x, y);
+    }, 400);
   </script>
+
 </body>
 </html>
+      
+      
+        
+      
+    
+        
