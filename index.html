@@ -22,11 +22,11 @@
     p {
       font-size: 1.5em;
       margin: 20px auto;
-      width: 80%;
+      width: 85%;
     }
 
     .photo {
-      margin: 20px auto;
+      margin: 30px auto;
     }
 
     .photo img {
@@ -35,6 +35,11 @@
       border-radius: 20px;
       border: 5px solid white;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .photo img:hover {
+      transform: scale(1.05);
     }
 
     .balloon {
@@ -67,44 +72,26 @@
         opacity: 0;
       }
     }
-
-    .music {
-      position: fixed;
-      bottom: 20px;
-      width: 100%;
-      text-align: center;
-    }
-
-    audio {
-      border-radius: 10px;
-      outline: none;
-    }
   </style>
 </head>
 <body>
   <h1>🎉 Happy Birthday Brother! 🎂</h1>
-  <p>You're more than just a brother — you're my hero, my guide, and my forever friend. Wishing you a day full of love, laughter, and unforgettable memories!</p>
+  <p>You're more than just a brother — you're my hero, my best friend, and my biggest inspiration. May your day be full of joy, love, and surprises!</p>
 
+  <!-- 📸 Replace 'your-photo.jpg' with your uploaded image name -->
   <div class="photo">
-    <img src="us.jpg" alt="Me and My Brother">
+    <img src="your-photo.jpg" alt="Me and My Brother">
   </div>
 
-  <!-- Balloons -->
+  <!-- 🎈 Balloons Animation -->
   <div class="balloon" style="left: 10%; background-color: #ff4e50;"></div>
   <div class="balloon" style="left: 30%; background-color: #f9d423;"></div>
   <div class="balloon" style="left: 50%; background-color: #1fab89;"></div>
   <div class="balloon" style="left: 70%; background-color: #9d50bb;"></div>
   <div class="balloon" style="left: 90%; background-color: #00c9ff;"></div>
 
-  <!-- Music -->
-  <div class="music">
-    <audio id="birthdayMusic" controls autoplay loop>
-      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-
   <script>
+    // Random balloon float animation
     const balloons = document.querySelectorAll('.balloon');
     balloons.forEach(balloon => {
       balloon.addEventListener('animationiteration', () => {
@@ -115,3 +102,4 @@
   </script>
 </body>
 </html>
+      
